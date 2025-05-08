@@ -1,0 +1,25 @@
+### Get all question
+GET http://localhost:5115/questions
+
+###
+
+### Check answers
+POST http://localhost:5115/questions/check-answer
+Content-Type: application/json
+
+{
+  "quizId": 1,
+  "userAnswer": "A"
+}
+
+###
+
+### Check final result
+POST http://localhost:5115/questions/submit-result
+Content-Type: application/json
+
+{
+  "totalCorrect": 7,
+  "totalQuestions": 10,
+  "durationSeconds": 83
+}
