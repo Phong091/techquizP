@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Result({ result, onRestart, onReview }) {
+function Result({ result, onRestart, onReview, onExit }) {
   return (
     <div style={styles.wrapper}>
       <h2>Quiz Result</h2>
@@ -11,6 +11,7 @@ function Result({ result, onRestart, onReview }) {
       </h3>
       <button style={styles.button} onClick={onRestart}>Try Again</button>
       <button style={{ ...styles.button, marginLeft: 10 }} onClick={onReview}>Review Answers</button>
+      <button style={{ ...styles.button, marginLeft: 10 }} onClick={onExit}>Exit</button>
     </div>
   );
 }
@@ -26,13 +27,14 @@ const styles = {
   },
   button: {
     marginTop: 20,
-    padding: '12px 28px',
+    padding: '12px',
     fontSize: 16,
     borderRadius: 6,
     border: 'none',
     backgroundColor: '#1976d2',
     color: 'white',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    width: '150px'
   }
 };
 

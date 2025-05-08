@@ -88,6 +88,11 @@ function App() {
   };
 
   const handleRestart = () => {
+    handleResetQuiz();
+    startQuiz();
+  };
+
+  const handleResetQuiz = () => {
     setIndex(0);
     setAnswers({});
     setCorrectAnswers({});
@@ -96,7 +101,7 @@ function App() {
     setQuizSubmitted(false);
     setResult(null);
     setReviewMode(false);
-  };
+  }
 
   const handleReview = () => {
     setReviewMode(true);
@@ -124,14 +129,14 @@ function App() {
   }
 
   if (quizSubmitted) {
-    return <Result result={result} onRestart={handleRestart} onReview={handleReview} />;
+    return <Result result={result} onRestart={handleRestart} onReview={handleReview} onExit={handleResetQuiz} />;
   }
 
   const current = questions[index] || {};
   const isLast = index === questions.length - 1;
 
   return (
-    <div style={styles.wrapper}>
+    <div style={{...styles.wrapper, minHeight: 420}}>
       <div style={styles.counter}>Question {index + 1} / {questions.length}</div>
 
       <Question

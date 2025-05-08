@@ -4,10 +4,10 @@ function Question({ question, selected, correctAnswer, onSelect, submitted }) {
   const getStyle = (opt) => {
     if (!submitted) return baseStyle;
     if (opt === correctAnswer) {
-      return { ...baseStyle, border: '1px solid green' };
+      return { ...baseStyle, border: '2px solid green' };
     }
     if (opt === selected && opt !== correctAnswer) {
-      return { ...baseStyle, border: '1px solid red' };
+      return { ...baseStyle, border: '2px solid red' };
     }
     return baseStyle;
   };
